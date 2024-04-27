@@ -1,4 +1,4 @@
-using Unity.IO.LowLevel.Unsafe;
+using System;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -13,6 +13,9 @@ public class Entity : MonoBehaviour
     protected float _currentAttackRange;
 
     [HideInInspector] public bool IsDead;
+
+   
+
 
     private void Start()
     {
@@ -51,4 +54,7 @@ public class Entity : MonoBehaviour
             IsDead = true;
         }
     }
+
+    protected virtual void Died() { }
+
 }
